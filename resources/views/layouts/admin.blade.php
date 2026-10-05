@@ -60,35 +60,78 @@
     <!--sidebae navbar-->
     <aside class="sidebar p-3 d-flex flex-column justify-content-between">
         <div>
-            <div class="d-flex align-items-center gap-2 px-2 py-3 mb-3 border-bottom">
-                <img src="{{ asset('img/logo.jpg') }}" alt="Logo SMKN 4 Bogor" style="height: 40px; width: auto;">
-                <h5 class="fw-bold mb-0 text-dark">SI-Kr4bat</h5>
-            </div>
-
-            <!--navigasi-->
-            <nav class="nav flex-column">
-                <a class="nav-link {{ request()->is('admin/dashboard') ? 'active' : ''}}" href="{{ route('admin.dashboard') }}">
-                    <i class="bi bi-grid-1x2-fill"></i>
-                    <span>Dasbor</span>
-                </a>
-                <a class="nav-link {{ request()->is('admin/program*') ? 'active' : ''}}" href="{{ route('admin.program.index') }}">
-                    <i class="bi bi-award-fill"></i>
-                    <span>Program Keahlian</span>
-                </a>
-                <a class="nav-link {{ request()->is('admin/galeri*') ? 'active' : ''}}" href="{{ route('admin.galeri.index') }}">
-                    <i class="bi bi-images"></i>
-                    <span>Galeri</span>
-                </a>
-                <a class="nav-link {{ request()->is('admin/artikel*') ? 'active' : ''}}" href="{{ route('admin.artikel.index') }}">
-                    <i class="bi bi-newspaper"></i>
-                    <span>Artikel</span>
-                </a>
-                <a class="nav-link text-primary mt-2" href="{{ url('/') }}" target="_blank">
-                    <i class="bi bi-box-arrow-up-right"></i>
-                    <span>Lihat Website</span>
-                </a>
-            </nav>
+    <!-- Logo & Brand Header -->
+    <div class="d-flex align-items-center gap-2 px-3 py-3 mb-3 border-bottom">
+        <img src="{{ asset('img/logo.jpg') }}" alt="Logo SMKN 4 Bogor" class="rounded" style="height: 40px; width: auto; object-fit: contain;">
+        <div>
+            <h5 class="fw-bold mb-0 text-dark lh-1">SI-Kr4bat</h5>
+            <small class="text-muted style-small" style="font-size: 0.75rem;">SMKN 4 Bogor</small>
         </div>
+    </div>
+
+    <!-- Navigasi Utama -->
+    <nav class="nav flex-column gap-1 px-2">
+        <!-- Dasbor -->
+        <a class="nav-link {{ request()->is('admin/dashboard') ? 'active' : '' }}" href="{{ route('admin.dashboard') }}">
+            <i class="bi bi-grid-1x2-fill me-2"></i>
+            <span>Dasbor</span>
+        </a>
+
+        <!-- Header Seksi Konten -->
+        <div class="sidebar-heading text-uppercase text-muted fw-bold px-3 mt-3 mb-1" style="font-size: 0.7rem; letter-spacing: 0.5px;">
+            Kelola Konten
+        </div>
+
+        <!-- Profil Sekolah -->
+        <a class="nav-link {{ request()->is('admin/profil*') ? 'active' : '' }}" href="{{ route('admin.profil.index') }}">
+            <i class="bi bi-building me-2"></i>
+            <span>Profil Sekolah</span>
+        </a>
+
+        <!-- Program Keahlian -->
+        <a class="nav-link {{ request()->is('admin/program*') ? 'active' : '' }}" href="{{ route('admin.program.index') }}">
+            <i class="bi bi-award-fill me-2"></i>
+            <span>Program Keahlian</span>
+        </a>
+
+        <!-- Produk & Karya -->
+        <a class="nav-link {{ request()->is('admin/produk*') ? 'active' : '' }}" href="{{ route('admin.produk.index') }}">
+            <i class="bi bi-box-seam-fill me-2"></i>
+            <span>Produk & Karya</span>
+        </a>
+
+        <!-- Galeri -->
+        <a class="nav-link {{ request()->is('admin/galeri*') ? 'active' : '' }}" href="{{ route('admin.galeri.index') }}">
+            <i class="bi bi-images me-2"></i>
+            <span>Galeri</span>
+        </a>
+
+        <!-- Artikel -->
+        <a class="nav-link {{ request()->is('admin/artikel*') ? 'active' : '' }}" href="{{ route('admin.artikel.index') }}">
+            <i class="bi bi-newspaper me-2"></i>
+            <span>Artikel</span>
+        </a>
+
+        <!-- Header Seksi Pesan -->
+        <div class="sidebar-heading text-uppercase text-muted fw-bold px-3 mt-3 mb-1" style="font-size: 0.7rem; letter-spacing: 0.5px;">
+            Pesan & Interaksi
+        </div>
+
+        <!-- Pesan Masuk / Kontak -->
+        <a class="nav-link {{ request()->is('admin/kontak*') ? 'active' : '' }}" href="{{ route('admin.kontak.index') }}">
+            <i class="bi bi-envelope-paper-fill me-2"></i>
+            <span>Pesan Masuk</span>
+        </a>
+
+        <hr class="my-3 mx-2 border-secondary opacity-25">
+
+        <!-- Lihat Website Publik -->
+        <a class="nav-link text-primary fw-semibold" href="{{ url('/') }}" target="_blank">
+            <i class="bi bi-box-arrow-up-right me-2"></i>
+            <span>Lihat Website</span>
+        </a>
+    </nav>
+</div>
         <!--tombolkeluar-->
         <div class="pt-3 border-top">
             <form action="{{ route('logout') }}" method="POST">

@@ -56,13 +56,22 @@
                         <a class="nav-link custom-nav-link {{ Request::is('/') ? 'active' : '' }}" href="{{ url('/') }}">Beranda</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link custom-nav-link {{ Request::is('profil*') ? 'active' : '' }}" href="{{ url('/profil') }}">Profil</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link custom-nav-link {{ Request::is('program-keahlian*') ? 'active' : '' }}" href="{{ url('/program-keahlian') }}">Program Keahlian</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link custom-nav-link {{ Request::is('produk*') ? 'active' : '' }}" href="{{ url('/produk') }}">Produk & Karya</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link custom-nav-link {{ Request::is('galeri*') ? 'active' : '' }}" href="{{ route('galeri.index') }}">Galeri</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link custom-nav-link {{ Request::is('artikel*') ? 'active' : '' }}" href="{{ route('artikel.index') }}">Artikel</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link custom-nav-link {{ Request::is('kontak*') ? 'active' : '' }}" href="{{ url('/kontak') }}">Kontak</a>
                     </li>
                 </ul>
                 <div class="d-flex align-items-center justify-content-center">
@@ -110,13 +119,22 @@
                         <a href="{{ url('/') }}" class="text-white text-decoration-none hover-white">Beranda</a>
                     </li>
                     <li class="mb-2">
+                        <a href="{{ url('/profil') }}" class="text-white text-decoration-none hover-white">Profil Sekolah</a>
+                    </li>
+                    <li class="mb-2">
                         <a href="{{ url('/program-keahlian') }}" class="text-white text-decoration-none hover-white">Program keahlian</a>
+                    </li>
+                    <li class="mb-2">
+                        <a href="{{ route('produk.index') }}" class="text-white text-decoration-none hover-white">Produk & Karya</a>
                     </li>
                     <li class="mb-2">
                         <a href="{{ url('/galeri') }}" class="text-white text-decoration-none hover-white">Galeri</a>
                     </li>
                     <li class="mb-2">
                         <a href="{{ url('/artikel') }}" class="text-white text-decoration-none hover-white">Artikel</a>
+                    </li>
+                    <li class="mb-2">
+                        <a href="{{ route('kontak.index') }}" class="text-white text-decoration-none hover-white">Kontak</a>
                     </li>
                 </ul>
             </div>
